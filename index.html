@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="background_img">
+
+    <div id="main" >
+        <form action="">
+            <h1>Login form</h1>
+            <input type="text" placeholder="Enter Your Fname" id="first"> <br>
+            <input type="text" placeholder="Enter Your Lname"  id="last"> <br>
+            <input type="email" placeholder="Enter Your Email"  id="email" required><br>
+            <input type="password" placeholder="Enter Your password"  id="password"> <br>
+            <input type="password" placeholder="Enter Your  Conform password" id="conformpassword"> <br>
+            <input type="number" placeholder="Enter Your Number" id="mobile"> <br>
+            <button id="btn" >Submit</button>
+            
+        </form> 
+    </div>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    let first = document.getElementById("first")
+    let last = document.getElementById("last")
+    let email = document.getElementById("email")
+    let pass = document.getElementById("password")
+    let password = document.getElementById("conformpassword")
+    let mobile = document.getElementById("mobile")
+    let btn = document.getElementById("btn")
+
+    let box = document.querySelectorAll("input")
+
+
+    btn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        
+        // if(first.value !=="" && last.value !=="" &&email.value !=="" && pass.value !=="" &&pass.value !=="" &&password.value !=="" && password.value !=="" &&  mobile.value !=="")
+
+        if (first.value === ""){
+            alert("Please Enter The Fist Name")
+        }
+         else if (last.value === ""){
+            alert("Please Enter The Last Name")
+        }
+        else if  (email.value === ""){
+            alert("Please Enter The Email")
+        }
+        else if  (pass.value === ""){
+            alert("Please Enter The Password")
+        }
+
+        else if  (password.value === ""){
+            alert("Please Enter The Password")
+        }
+
+        else if (pass.value.length <6){
+            alert("Please  Enter The Password 6-digits");
+        }
+
+        else if  (pass.value !== password.value ){
+            alert("Password are Not Same");
+        }
+
+        else if (mobile.value === ""){
+            alert("Please  Enter The Mobile Number");
+        }
+      
+        else if (mobile.value.length  <10){
+            alert("Please  Enter The Mobile Number");
+        }
+        
+        else{
+
+            const obj = {
+                first: first.value,
+                last:last.value,
+                email:email.value,
+                pass:password.value,
+                password:conformpassword.value,
+                mobile:mobile.value
+            }
+
+             
+          localStorage.setItem("Userdata", JSON.stringify(obj))
+    
+            alert("Form is the succsefull");
+            box.forEach((input)  =>
+          {
+            input.value=""
+        });
+        }
+    });
+
+
+
+
+
+
+    // document.getElementById('main').addEventListener('submit', function (e) {
+    //         e.preventDefault();
+
+
+          
+    //     });
+
+</script>

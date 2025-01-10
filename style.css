@@ -1,0 +1,66 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+#background_img{
+    background-image: url("https://picperf.io/https://laravelnews.s3.amazonaws.com/images/validation-success-featured.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 20px 0px 130px 0px;
+    width: 100%;
+  
+}
+@keyframes move{
+  25%{
+    background: linear-gradient(rgb(123, 217, 77),rgb(211, 22, 22),rgb(14, 206, 231));
+  }
+
+  50%{
+    background: linear-gradient(rgb(233, 6, 40),lightsalmon,rgb(140, 51, 199));
+  }
+}
+
+#main{
+    background: linear-gradient(rgb(72, 54, 210),red,lightyellow);
+    padding: 20px;
+    width: 345px;
+    height: 490px;
+    margin: auto;
+    position: absolute;
+    top: 30px;
+
+   
+    border-radius: 20px;
+    position: relative;
+    animation: move 3s ease-out infinite;
+    
+}
+h1{
+    margin: 0px 0px 10px 65px;
+    color: white;
+
+}
+
+input{
+    padding:8px;
+    width: 300px; 
+    border-radius: 10px;
+    margin-top: 20px; 
+    border: unset;
+}
+
+button{
+    margin: 20px 0px 20px 115px;
+    background-color: blue ;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: unset;
+}
+
+button:hover{
+    background-color: red;
+}
